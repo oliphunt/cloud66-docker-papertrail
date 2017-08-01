@@ -17,5 +17,6 @@ cd remote_syslog
 sudo cp ./remote_syslog /usr/local/bin
 
 # Start the service
+sudo service remote_syslog stop
 sudo service remote_syslog start
 sudo update-rc.d remote_syslog defaults

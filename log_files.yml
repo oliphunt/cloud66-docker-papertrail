@@ -1,5 +1,10 @@
 files:
-  - /var/log/**/*.log
+  - /var/log/elasticsearch/*.log
+  - /var/log/nginx/*.log
+  - /var/log/nginx.log
+  - /var/log/containers/**/*.log
+  - /var/log/postrgesql/*.log
+  - /var/log/redis.log
 destination:
   host: {{ HOST }}
   port: {{ PORT }}
