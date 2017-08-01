@@ -5,9 +5,9 @@ first_thing:
       mkdir papertrail
       curl -sL https://github.com/oliphunt/cloud66-docker-papertrail/archive/master.tar.gz | tar xz -C /tmp/papertrail --strip-components=1
       chmod 755 /tmp/papertrail/papertrail.sh
-      /tmp/papertrail/papertrail.sh
+      cd papertrail
+      ./papertrail.sh
       rm -r /tmp/papertrail
     target: any
     execute: true
     apply_during: all
-    owner: root:root

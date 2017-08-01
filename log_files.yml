@@ -1,6 +1,6 @@
 files:
   - /var/log/**/*.log
 destination:
-  host: {{ PAPERTRAIL_HOST }}
-  port: {{ PAPERTRAIL_PORT }}
+  host: {{ HOST }}
+  port: {{ PORT }}
   protocol: tls
