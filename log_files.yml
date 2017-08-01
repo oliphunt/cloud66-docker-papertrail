@@ -1,7 +1,6 @@
 files:
-  - <%= ENV['STACK_BASE'] %>/shared/log/production.log
-  - <%= ENV['STACK_BASE'] %>/shared/log/nginx_error.log
+  - /var/log/**/*.log
 destination:
-  host: {{ HOST }}
-  port: {{ PORT }}
+  host: {{ PAPERTRAIL_HOST }}
+  port: {{ PAPERTRAIL_PORT }}
   protocol: tls
