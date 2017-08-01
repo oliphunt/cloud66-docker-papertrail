@@ -14,9 +14,10 @@ sudo chmod +x /etc/init.d/remote_syslog
 wget https://github.com/papertrail/remote_syslog2/releases/download/v0.19/remote_syslog_linux_amd64.tar.gz
 tar xzf ./remote_syslog*.tar.gz
 cd remote_syslog
-sudo cp ./remote_syslog /usr/local/bin
 
-# Start the service
+# Setup the service
 sudo service remote_syslog stop
+
+sudo cp ./remote_syslog /usr/local/bin
 sudo service remote_syslog start
 sudo update-rc.d remote_syslog defaults
