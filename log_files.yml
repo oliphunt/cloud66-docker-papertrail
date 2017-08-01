@@ -1,10 +1,15 @@
 files:
-  - /var/log/elasticsearch/*.log
-  - /var/log/nginx/*.log
-  - /var/log/nginx.log
+  - path: /var/log/elasticsearch/*.log
+    tag: elasticsearch
+  - path: /var/log/nginx/*.log
+    tag: nginx
+  - path: /var/log/nginx.log
+    tag: nginx
   - /var/log/containers/**/*.log
-  - /var/log/postrgesql/*.log
-  - /var/log/redis.log
+  - path: /var/log/postrgesql/*.log
+    tag: postrgesql
+  - path: /var/log/redis.log
+    tag: redis
 destination:
   host: {{ HOST }}
   port: {{ PORT }}
