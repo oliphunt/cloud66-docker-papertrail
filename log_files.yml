@@ -2,6 +2,6 @@ files:
   - <%= ENV['STACK_BASE'] %>/shared/log/production.log
   - <%= ENV['STACK_BASE'] %>/shared/log/nginx_error.log
 destination:
-  host: logs.papertrailapp.com
-  port: 12345 # change to your port
+  host: {{ HOST }}
+  port: {{ PORT }}
   protocol: tls

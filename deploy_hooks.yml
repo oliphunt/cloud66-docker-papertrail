@@ -1,20 +1,13 @@
-production:
-  after_rails:
-    - source: /.cloud66/log_files.yml
-      destination: /etc/log_files.yml
-      sudo: true
-      target: rails
-      apply_during: build_only
-
-    - source: /.cloud66/remote_syslog.init.d
-      destination: /etc/init.d/remote_syslog
-      sudo: true
-      target: rails
-      apply_during: build_only
-
-    - source: /.cloud66/papertrail.sh
-      destination: /tmp/papertrail.sh
-      target: rails
-      sudo: true
-      execute: true
-      apply_during: build_only
+first_thing:
+  - inline: |
+      #!/usr/bin/env bash
+      cd /tmp
+      mkdir papertrail
+      curl -sL https://github.com/oliphunt/cloud66-docker-papertrail/archive/master.tar.gz | tar xz -C /tmp/papertrail --strip-components=1
+      chmod 755 /tmp/papertrail/papertrail.sh
+      /tmp/papertrail/papertrail.sh
+      rm -r /tmp/papertrail
+    target: any
+    execute: true
+    apply_during: all
+    owner: root:root
