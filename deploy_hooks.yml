@@ -12,3 +12,4 @@ first_thing:
     target: any
     execute: true
     apply_during: all
+    run_on: all_servers
