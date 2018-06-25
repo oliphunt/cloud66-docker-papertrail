@@ -1,6 +1,8 @@
 first_thing:
   - inline: |
       #!/usr/bin/env bash
+      export PAPERTRAIL_HOST=<%= ENV['PAPERTRAIL_HOST']%>
+      export PAPERTRAIL_PORT=<%= ENV['PAPERTRAIL_PORT']%>
       cd /tmp
       mkdir papertrail
       curl -sL https://github.com/oliphunt/cloud66-docker-papertrail/archive/master.tar.gz | tar xz -C /tmp/papertrail --strip-components=1
